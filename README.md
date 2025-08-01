@@ -21,7 +21,7 @@ To install **PSDWriter**, follow these steps:
 
 ## 📄 License
 
-This repository contains various pieces of original source code licensed under the **MIT License**, except for bundled third-party libraries such as `stb` and `psd_sdk`, which retain their own licenses.
+This repository contains various pieces of original source code licensed under the **MIT License**, except for bundled third-party libraries such as [`stb`](https://github.com/nothings/stb) and [`psd_sdk`](https://github.com/MolecularMatters/psd_sdk), which retain their own licenses.
 
 ---
 
