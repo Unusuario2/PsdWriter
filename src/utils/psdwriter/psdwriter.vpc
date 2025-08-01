@@ -1,0 +1,60 @@
+//-----------------------------------------------------------------------------
+//	PSDWRITER.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\.."
+$Macro OUTBINDIR	"$SRCDIR\..\game\bin"
+
+$Include "$SRCDIR\vpc_scripts\source_exe_con_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories		"$BASE,..\common,..\..\thirdparty\psd_sdk\src;..\..\thirdparty\stb-master"
+	}
+}
+
+$Project "PSD Writer"
+{
+	$Folder	"Source Files"
+	{
+		-$File	"..\..\public\tier0\memoverride.cpp"
+		$File	"psdwriter.cpp"
+		$File	"psdmain.cpp"
+
+		$Folder	"Common Files"
+		{
+			$File	"..\common\cmdlib.cpp"
+			$File	"$SRCDIR\public\filesystem_helpers.cpp"
+			$File	"$SRCDIR\public\filesystem_init.cpp"
+			$File	"..\common\filesystem_tools.cpp"
+			$File	"..\common\scriplib.cpp"
+			$File	"..\common\tools_minidump.cpp"
+			$File	"$SRCDIR\public\loadcmdline.cpp"
+		}
+	}
+
+	$Folder	"Header Files"
+	{
+		$File	"psdwriter.h"
+		$File	"psdmain.h"
+
+		$Folder	"Common header files"
+		{
+			$File	"..\common\tools_minidump.h"
+			$File	"..\common\cmdlib.h"
+			$File	"$SRCDIR\public\filesystem_init.h"
+			$File	"..\common\filesystem_tools.h"
+			$File	"$SRCDIR\public\loadcmdline.h"
+		}
+	}
+
+	$Folder	"Link Libraries"
+	{
+		$Lib $LIBCOMMON/Psd_Sdk
+		$Lib tier2
+	}
+}

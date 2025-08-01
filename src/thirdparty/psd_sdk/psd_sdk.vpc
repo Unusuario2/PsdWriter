@@ -1,0 +1,189 @@
+//-----------------------------------------------------------------------------
+//	PSD_SDK.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\.."
+$Macro OUTLIBDIR	"$LIBCOMMON"
+
+$Conditional DISABLE_RTTI	    "true"
+
+$Conditional THIRDPARTYPROJECT  "true"
+
+$include "$SRCDIR\vpc_scripts\source_lib_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;"
+		$PreprocessorDefinitions		"$BASE;"
+
+		$TreatWarningsAsErrors				"No"
+	}
+}
+
+$Project "PSD Sdk"
+{
+	$Folder "Source Files"
+	{
+		$Folder "psd_source_exporter"
+		{
+			$File "src\Psd\PsdExport.cpp"
+		}
+
+		$Folder "psd_source_image_util"
+		{
+			$File "src\Psd\PsdDecompressRle.cpp"
+			$File "src\Psd\PsdInterleave.cpp"
+			$File "src\Psd\PsdLayerCanvasCopy.cpp"
+		}
+
+		$Folder "psd_source_interfaces"
+		{
+			$File "src\Psd\PsdAllocator.cpp"
+			$File "src\Psd\PsdFile.cpp"
+			$File "src\Psd\PsdMallocAllocator.cpp"
+			$File "src\Psd\PsdNativeFile.cpp"
+		}
+
+		$Folder "psd_source_parser"
+		{
+			$File "src\Psd\PsdParseColorModeDataSection.cpp"
+			$File "src\Psd\PsdParseDocument.cpp"
+			$File "src\Psd\PsdParseImageDataSection.cpp"
+			$File "src\Psd\PsdParseImageResourcesSection.cpp"
+			$File "src\Psd\PsdParseLayerMaskSection.cpp"
+		}
+
+		$Folder "psd_source_types"
+		{
+			$File "src\Psd\PsdBlendMode.cpp"
+			$File "src\Psd\PsdColorMode.cpp"
+		}
+
+		$Folder "psd_source_util"
+		{
+			$File "src\Psd\PsdFixedSizeString.cpp"
+			$File "src\Psd\PsdSyncFileReader.cpp"
+			$File "src\Psd\PsdSyncFileWriter.cpp"
+		}
+
+		$Folder "psd_source_zip"
+		{
+			$File "src\Psd\Psdminiz.c"
+		}
+
+		$Folder "psd_source_root"
+		{
+			$File "src\Psd\PsdPch.cpp"
+		}
+	}
+
+	$Folder "Header Files"
+	{
+		$Folder "psd_source_exporter"
+		{
+			$File "src\Psd\PsdExport.h"
+			$File "src\Psd\PsdExportChannel.h"
+			$File "src\Psd\PsdExportColorMode.h"
+			$File "src\Psd\PsdExportDocument.h"
+			$File "src\Psd\PsdExportLayer.h"
+			$File "src\Psd\PsdExportMetaDataAttribute.h"
+		}
+
+		$Folder "psd_source_image_util"
+		{
+			$File "src\Psd\PsdDecompressRle.h"
+			$File "src\Psd\PsdInterleave.h"
+			$File "src\Psd\PsdLayerCanvasCopy.h"
+		}
+
+		$Folder "psd_source_interfaces"
+		{
+			$File "src\Psd\PsdAllocator.h"
+			$File "src\Psd\PsdFile.h"
+			$File "src\Psd\PsdMallocAllocator.h"
+			$File "src\Psd\PsdNativeFile.h"
+		}
+
+		$Folder "psd_source_parser"
+		{
+			$File "src\Psd\PsdParseColorModeDataSection.h"
+			$File "src\Psd\PsdParseDocument.h"
+			$File "src\Psd\PsdParseImageDataSection.h"
+			$File "src\Psd\PsdParseImageResourcesSection.h"
+			$File "src\Psd\PsdParseLayerMaskSection.h"
+		}
+
+		$Folder "psd_source_platform"
+		{
+			$File "src\Psd\PsdAssert.h"
+			$File "src\Psd\PsdCompilerMacros.h"
+			$File "src\Psd\PsdLog.h"
+			$File "src\Psd\PsdNamespace.h"
+			$File "src\Psd\PsdPlatform.h"
+			$File "src\Psd\PsdTypes.h"
+		}
+
+		$Folder "psd_source_sections"
+		{
+			$File "src\Psd\PsdColorModeDataSection.h"
+			$File "src\Psd\PsdImageDataSection.h"
+			$File "src\Psd\PsdImageResourcesSection.h"
+			$File "src\Psd\PsdLayerMaskSection.h"
+		}
+
+		$Folder "psd_source_types"
+		{
+			$File "src\Psd\PsdAlphaChannel.h"
+			$File "src\Psd\PsdBlendMode.h"
+			$File "src\Psd\PsdChannel.h"
+			$File "src\Psd\PsdColorMode.h"
+			$File "src\Psd\PsdCompressionType.h"
+			$File "src\Psd\PsdDocument.h"
+			$File "src\Psd\PsdImageResourceType.h"
+			$File "src\Psd\PsdLayer.h"
+			$File "src\Psd\PsdLayerMask.h"
+			$File "src\Psd\PsdLayerType.h"
+			$File "src\Psd\PsdPlanarImage.h"
+			$File "src\Psd\PsdSection.h"
+			$File "src\Psd\PsdVectorMask.h"
+		}
+
+		$Folder "psd_source_util"
+		{
+			$File "src\Psd\PsdBitUtil.h"
+			$File "src\Psd\PsdEndianConversion.h"
+			$File "src\Psd\PsdFixedSizeString.h"
+			$File "src\Psd\PsdKey.h"
+			$File "src\Psd\PsdMemoryUtil.h"
+			$File "src\Psd\PsdSyncFileReader.h"
+			$File "src\Psd\PsdSyncFileUtil.h"
+			$File "src\Psd\PsdSyncFileWriter.h"
+			$File "src\Psd\PsdUnionCast.h"
+		}
+
+		$Folder "psd_source_zip"
+		{
+			$File "src\Psd\Psdminiz.h"
+		}
+
+		$Folder "psd_source_root"
+		{
+			$File "src\Psd\Psd.h"
+			$File "src\Psd\PsdDocumentation.h"
+			$File "src\Psd\Psdinttypes.h"
+			$File "src\Psd\Psdispod.h"
+			$File "src\Psd\Psdisunsigned.h"
+			$File "src\Psd\PsdPch.h"
+			$File "src\Psd\Psdstdint.h"
+		}
+
+		$Folder "Common header files"
+		{
+			$File "$SRCDIR\public\tier0\dbg.h"
+		}
+	}
+}
