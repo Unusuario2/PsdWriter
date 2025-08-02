@@ -1,4 +1,4 @@
-//============ ------------------------------------------------- ===============//
+//===== PSDWriter -> Writen by Unusuario2, https://github.com/Unusuario2  =====//
 //
 // Purpose:
 //

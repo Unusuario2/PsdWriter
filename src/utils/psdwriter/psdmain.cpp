@@ -1,4 +1,4 @@
-//============ ------------------------------------------------- ===============//
+//===== PSDWriter -> Writen by Unusuario2, https://github.com/Unusuario2  =====//
 //
 // Purpose: Converts .png, .jpg, etc.. to .psd for vtex compile
 //
